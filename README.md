@@ -5,7 +5,7 @@ A javascript module for searching gif images
 ## Getting Started
 
 ```
-import gifSearch from 'gif-search';
+import gifSearch from 'gifs-search';
 
 //set your giphy key
 gifSearch.apiKey("3XHgNK953tmBjosVWO1IGR5q3eL0vU5i")
@@ -24,7 +24,7 @@ gifSearch.random('cat').then(
 ### Installing
 
 ```
-npm install gif-search
+npm install gifs-search
 ```
 
 ### Running the tests
