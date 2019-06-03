@@ -1,6 +1,8 @@
 import gifSearch from './../dist/gif-search.min';
 import test from 'ava';
 
+gifSearch.apiKey("3XHgNK953tmBjosVWO1IGR5q3eL0vU5i")
+
 const isValidGifUrl = (url) => (
     url.match(/\/.*?.gif/g) ? true : false
 );

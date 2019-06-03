@@ -5,14 +5,15 @@ import Request from 'request';
 const replaceSpaceWithPlus = (str) => (
     str.split(' ').join('+')
 );
-const api = {
+var api = {
+    keyApp : 'R',
     giphy: {
         search: {
-            url: (keywords) => {
+            url: (keywords, apiKey) => {
                 return [
                     'http://api.giphy.com/v1/gifs/search?',
                     `q=${replaceSpaceWithPlus(keywords)}`,
-                    '&api_key=dc6zaTOxFJmzC&limit=1',
+                    `&api_key=${apiKey}&limit=1`,
                     '&offset=0'
                 ].join('');
             },
@@ -21,11 +22,11 @@ const api = {
             )
         },
         random: {
-            url: (keywords) => {
+            url: (keywords, apiKey) => {
                 return [
                     'http://api.giphy.com/v1/gifs/random?',
                     `tag=${replaceSpaceWithPlus(keywords)}`,
-                    '&api_key=dc6zaTOxFJmzC&limit=1',
+                    `&api_key=${apiKey}&limit=1`,
                     '&offset=0'
                 ].join('');
             },
@@ -40,12 +41,15 @@ const api = {
  * Search for a gif using GiphyApi
  */
 module.exports = {
+    apiKey : (key) => { 
+        return api.keyApp = key;
+    },
     query: (input) => {
         const searchApi = api.giphy.search;
 
         return new Promise((resolve, reject) => {
             Request(
-                searchApi.url(input),
+                searchApi.url(input, api.keyApp),
                 (err, response, body) => {
                     if (err) {
                         reject(err);
@@ -67,7 +71,7 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
             Request(
-                randomApi.url(input),
+                randomApi.url(input, api.keyApp),
                 (err, response, body) => {
                     if (err) {
                         reject(err);
