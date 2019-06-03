@@ -10,22 +10,15 @@
     "build": "rollup -c",
     "test": "nyc ava"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/selcher/gif-search.git"
-  },
+  "repository": "ran-j/complete-express-app-generator",
   "keywords": [
     "gif"
   ],
-  "author": "Selcher <selcher123@gmail.com> (http://selcher.github.io)",
+  "author": "Ranieri <ran-junior@hotmail.com>",
   "license": "MIT",
   "files": [
     "dist/"
   ],
-  "bugs": {
-    "url": "https://github.com/selcher/gif-search/issues"
-  },
-  "homepage": "https://github.com/selcher/gif-search#readme",
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-plugin-external-helpers": "^6.22.0",

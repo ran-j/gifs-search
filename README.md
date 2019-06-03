@@ -7,6 +7,9 @@ A javascript module for searching gif images
 ```
 import gifSearch from 'gif-search';
 
+//set your giphy key
+gifSearch.apiKey("3XHgNK953tmBjosVWO1IGR5q3eL0vU5i")
+
 // Search for a gif
 gifSearch.query('cat').then(
     gifUrl => console.log(gifUrl)
