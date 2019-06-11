@@ -1,6 +1,6 @@
 {
   "name": "gifs-search",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A javascript module for searching gif images",
   "main": "dist/gif-search.min.js",
   "engines": {

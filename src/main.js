@@ -2,9 +2,6 @@
 
 import Request from 'request';
 
-const replaceSpaceWithPlus = (str) => (
-    str.split(' ').join('+')
-);
 var api = {
     keyApp : 'R',
     giphy: {
@@ -12,7 +9,7 @@ var api = {
             url: (keywords, apiKey) => {
                 return [
                     'http://api.giphy.com/v1/gifs/search?',
-                    `q=${replaceSpaceWithPlus(keywords)}`,
+                    `q=${encodeURI(keywords)}`,
                     `&api_key=${apiKey}&limit=1`,
                     '&offset=0'
                 ].join('');
@@ -25,7 +22,7 @@ var api = {
             url: (keywords, apiKey) => {
                 return [
                     'http://api.giphy.com/v1/gifs/random?',
-                    `tag=${replaceSpaceWithPlus(keywords)}`,
+                    `tag=${encodeURI(keywords)}`,
                     `&api_key=${apiKey}&limit=1`,
                     '&offset=0'
                 ].join('');
